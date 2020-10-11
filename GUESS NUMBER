@@ -1,0 +1,30 @@
+echo "# vs-" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/KafuuHiro/vs-.git
+git push -u origin main
+#include <iostream>
+#include <time.h>
+#include <stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+	printf("PICK A NUMBER AMID 0-1000\n");
+	int a, b=1001;
+	srand(time(0));
+	a = rand() % 1001;
+	while (a!=b)
+	{
+		scanf_s("%d", &b);
+		if (a > b)
+		{
+			printf("\nBIGGER\n");
+		}
+		else printf("\nSMALLER\n");
+	}
+	printf("YOU WIN");
+	return 0;
+}
