@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int C(int n, int k) 
+{
+    int c,i,p=1,q=1;
+    for (i = n; i > n - k; i--)
+    {
+        p = p * i;
+    }
+    for (i = k; i > 0; i--)
+    {
+        q = q * i;
+    }
+    if (k != 0)
+    {
+        c = p / q;
+        return c;
+    }
+    else return 1;
+}
+
+int main()
+{
+    int n, k;
+    scanf_s("%d\n%d", &n, &k);
+    printf("%d", C(n, k));
+    return 0;
+}
