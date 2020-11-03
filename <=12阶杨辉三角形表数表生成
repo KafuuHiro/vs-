@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+int C(int n, int k)
+{
+    int c, i, p = 1, q = 1;
+    for (i = n; i > n - k; i--)
+    {
+        p = p * i;
+    }
+    for (i = k; i > 0; i--)
+    {
+        q = q * i;
+    }
+    if (q != 0)
+    {
+        c = p / q;
+        return c;
+    }
+    else return 1;
+}
+
+int main()
+{
+    int l, c, i, j;
+    printf("输入小于或等于12的数\n");
+    scanf_s("%d", &l);
+    for (i = 0; i < l + 1; i++)
+    {
+        for (j = 0; j < i + 1; j++)
+        {
+            printf("%d ", C(i, j));
+            if (j == i)printf("\n");
+        }
+    }
+    return 0;
+}
