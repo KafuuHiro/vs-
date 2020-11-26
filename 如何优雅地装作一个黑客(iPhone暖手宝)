@@ -1,0 +1,12 @@
+#include<iostream>
+
+int main()
+{
+    char a;
+    srand(time(NULL));
+    while (1)
+    {
+        printf("%c", a = rand() % 94 + 35);
+    }
+    return 0;
+}
