@@ -1,0 +1,48 @@
+#include<iostream>
+
+void swap(int *a,int *b)
+{
+    int temp;
+    temp=*a;*a=*b;*b=temp;
+}
+
+int main()
+{
+    int m,n;
+    scanf("%d %d",&m,&n);
+    swap(&m,&n);
+     printf("%d%d",m,n);
+    return 0;
+}
+/*
+void swap(int a,int b)
+{
+    int temp;
+    temp=a;a=b;b=temp;
+}
+
+int main()
+{
+    int m,n;
+    scanf("%d %d",&m,&n);
+    swap(m,n);
+     printf("%d%d",m,n);
+    return 0;
+}
+*/
+/*
+void swap()
+{
+    int a,b,t;
+    t=a;a=b;b=t;
+}
+
+int main()
+{
+    int m,n;
+    scanf("%d %d",&m,&n);
+    swap();
+     printf("%d%d",m,n);
+    return 0;
+}
+*/
