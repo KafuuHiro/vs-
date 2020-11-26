@@ -1,0 +1,12 @@
+#include<iostream>
+
+int main()
+{
+    printf("编码  字符\n");
+    for (int a = 0; a <= 127; a++)
+    {
+        if (a < 100)printf("%d     %c\n", a, a);
+        else printf("%d    %c\n", a, a);
+    }
+    return 0;
+}
