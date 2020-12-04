@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+
+double J(int n)
+{
+    if (n == 0) return 1;
+    else return n * J(n - 1);
+}
+
+double p(double a, int n)
+{
+    if (n == 0) return 1;
+    else return a * p(a, n - 1);
+}
+
+double fTerm(double x, int i)
+{
+    return p(x, 2 * i + 1) / J(2 * i + 1);
+}
+
+int main()
+{
+    int i = 0, nSign = 1; double x, sum = 0; int e;
+    printf("请输入精度+-1E-");
+    scanf_s("%d", &e);
+    printf("f(x)=sin");
+    scanf_s("%lf", &x);
+    while (fTerm(x, i) >= p(0.1,e))
+    {
+        sum = sum + nSign * fTerm(x, i);
+        i++;
+        nSign = -nSign;
+    }
+    printf("%lf\n泰勒展式求和总项数：%d", sum, i - 1);
+    return 0;
+}
