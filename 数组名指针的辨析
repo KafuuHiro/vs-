@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<iostream>
+
+int main()
+{
+    int a[100],b[100],i;int *p=&a;
+    for(i=0;i<100;i++)
+    {
+        printf("a[%d]的地址 %d\n",i,&a[i]);
+        a[i]=i;
+    }
+        /*
+        for(i=0;i<100;i++)
+    {
+        printf("%d\n",&b[i]);
+    }    
+    */
+    printf("\na的地址 %d\n",&a);cout<<endl;
+    for(i=0;i<100;i++)printf("p+%d %d\n",i,p+i);cout<<endl;
+    for(i=0;i<100;i++)printf("a+%d %d\n",i,a+i);
+    printf("\n a的值 %d",a);
+    return 0;
+}
