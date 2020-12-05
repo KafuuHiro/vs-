@@ -1,0 +1,330 @@
+#include <reg52.h>
+
+sbit LED3 = P0^1;
+sbit LED8 = P0^6;
+sbit LED6 = P0^4;
+sbit LED4 = P0^2;
+sbit LED2 = P0^0;
+sbit ADDR0 = P1^0;
+sbit ADDR1 = P1^1;
+sbit ADDR2 = P1^2;
+sbit ADDR3 = P1^3;
+sbit ENLED = P1^4;
+sbit DB_0 = P0^0;
+sbit DB_5 = P0^5;
+sbit DB_4 = P0^4;
+sbit DB_3 = P0^3;
+sbit DB_2 = P0^2;
+sbit DB_6 = P0^6;
+sbit DB_1 = P0^1;
+sbit DB_7 = P0^7;
+
+void main()
+{
+	unsigned int i;
+	while (1)
+	{
+		ENLED = 0;
+		ADDR3 = 1;
+		
+		
+		for(i=0;i<50000;i++)
+		{
+			if(i<=10000)
+			{
+				ADDR2 = 1;
+				ADDR1 = 0;
+				ADDR0 = 1;
+				DB_1 = 1;
+				DB_2 = 1;
+				DB_3 = 0;
+				DB_4 = 0;
+				DB_5 = 0;
+				DB_0 = 0;
+				DB_6 = 1;
+				DB_7 = 1;
+			}
+			else if(i>10000&&i<=20000)
+			{
+				ADDR2 = 1;
+				ADDR1 = 0;
+				ADDR0 = 0;
+				DB_0 = 1;
+				DB_1 = 1;
+				DB_2 = 0;
+				DB_3 = 1;
+				DB_4 = 0;
+				DB_5 = 0;
+				DB_6 = 0;
+				DB_7 = 1;
+			}
+			else if(i>20000&&i<=30000)
+			{
+				ADDR2 = 0;
+				ADDR1 = 1;
+				ADDR0 = 1;
+				DB_0 = 1;
+				DB_1 = 1;
+				DB_2 = 1;
+				DB_3 = 1;
+				DB_4 = 0;
+				DB_5 = 0;
+				DB_6 = 1;
+				DB_7 = 1;
+			}
+			else if(i>30000&&i<=40000)
+			{
+				ADDR2 = 0;
+				ADDR1 = 1;
+				ADDR0 = 0;
+				DB_0 = 0;
+				DB_1 = 0;
+				DB_2 = 0;
+				DB_3 = 1;
+				DB_4 = 0;
+				DB_5 = 0;
+				DB_6 = 1;
+				DB_7 = 1;
+			}
+			else
+			{
+				ADDR2 = 0;
+				ADDR1 = 0;
+				ADDR0 = 1;
+				DB_0 = 0;
+				DB_1 = 0;
+				DB_2 = 0;
+				DB_3 = 0;
+				DB_4 = 0;
+				DB_5 = 0;
+				DB_6 = 1;
+				DB_7 = 1;
+			}
+		}
+		
+		
+		for(i=0;i<50000;i++)
+		{
+			if(i<=10000)
+			{
+				ADDR2 = 1;
+				ADDR1 = 0;
+				ADDR0 = 1;
+				DB_0 = 1;
+				DB_1 = 1;
+				DB_2 = 0;
+				DB_3 = 1;
+				DB_4 = 0;
+				DB_5 = 0;
+				DB_6 = 0;
+				DB_7 = 1;
+			}
+			else if(i>10000&&i<=20000)
+			{
+				ADDR2 = 1;
+				ADDR1 = 0;
+				ADDR0 = 0;
+				DB_0 = 0;
+				DB_1 = 0;
+				DB_2 = 0;
+				DB_3 = 1;
+				DB_4 = 0;
+				DB_5 = 0;
+				DB_6 = 0;
+				DB_7 = 1;
+			}
+			else if(i>20000&&i<=30000)
+			{
+				ADDR2 = 0;
+				ADDR1 = 1;
+				ADDR0 = 1;
+				DB_0 = 0;
+				DB_1 = 0;
+				DB_2 = 1;
+				DB_3 = 1;
+				DB_4 = 0;
+				DB_5 = 0;
+				DB_6 = 0;
+				DB_7 = 1;
+			}
+			else if(i>30000&&i<=40000)
+			{
+				ADDR2 = 0;
+				ADDR1 = 1;
+				ADDR0 = 0;
+				DB_0 = 0;
+				DB_1 = 0;
+				DB_2 = 1;
+				DB_3 = 1;
+				DB_4 = 0;
+				DB_5 = 0;
+				DB_6 = 0;
+				DB_7 = 1;
+			}
+			else
+			{
+				ADDR2 = 0;
+				ADDR1 = 0;
+				ADDR0 = 1;
+				DB_0 = 1;
+				DB_1 = 0;
+				DB_2 = 0;
+				DB_3 = 0;
+				DB_4 = 1;
+				DB_5 = 0;
+				DB_6 = 0;
+				DB_7 = 1;
+			}
+		}
+
+
+		for(i=0;i<50000;i++)
+		{
+			if(i<=10000)
+			{
+				ADDR2 = 1;
+				ADDR1 = 0;
+				ADDR0 = 1;
+				DB_0 = 1;
+				DB_1 = 1;
+				DB_2 = 0;
+				DB_3 = 0;
+				DB_4 = 0;
+				DB_5 = 0;
+				DB_6 = 0;
+				DB_7 = 1;
+			}
+			else if(i>10000&&i<=20000)
+			{
+				ADDR2 = 1;
+				ADDR1 = 0;
+				ADDR0 = 0;
+				DB_0 = 1;
+				DB_1 = 1;
+				DB_2 = 1;
+				DB_3 = 1;
+				DB_4 = 0;
+				DB_5 = 0;
+				DB_6 = 1;
+				DB_7 = 1;
+			}
+			else if(i>20000&&i<=30000)
+			{
+				ADDR2 = 0;
+				ADDR1 = 1;
+				ADDR0 = 1;
+				DB_0 = 0;
+				DB_1 = 0;
+				DB_2 = 1;
+				DB_3 = 1;
+				DB_4 = 0;
+				DB_5 = 0;
+				DB_6 = 1;
+				DB_7 = 1;
+			}
+			else if(i>30000&&i<=40000)
+			{
+				ADDR2 = 0;
+				ADDR1 = 1;
+				ADDR0 = 0;
+				DB_0 = 1;
+				DB_1 = 1;
+				DB_2 = 1;
+				DB_3 = 0;
+				DB_4 = 0;
+				DB_5 = 0;
+				DB_6 = 0;
+				DB_7 = 1;
+			}
+			else
+			{
+				ADDR2 = 0;
+				ADDR1 = 0;
+				ADDR0 = 1;
+				DB_0 = 1;
+				DB_1 = 1;
+				DB_2 = 0;
+				DB_3 = 1;
+				DB_4 = 0;
+				DB_5 = 0;
+				DB_6 = 0;
+				DB_7 = 1;
+			}
+		}
+		
+		
+		for(i=0;i<50000;i++)
+		{
+			if(i<=10000)
+			{
+				ADDR2 = 1;
+				ADDR1 = 0;
+				ADDR0 = 1;
+				DB_0 = 1;
+				DB_1 = 0;
+				DB_2 = 0;
+				DB_3 = 0;
+				DB_4 = 0;
+				DB_5 = 1;
+				DB_6 = 0;
+				DB_7 = 1;
+			}
+			else if(i>10000&&i<=20000)
+			{
+				ADDR2 = 1;
+				ADDR1 = 0;
+				ADDR0 = 0;
+				DB_0 = 0;
+				DB_1 = 0;
+				DB_2 = 0;
+				DB_3 = 1;
+				DB_4 = 0;
+				DB_5 = 0;
+				DB_6 = 0;
+				DB_7 = 1;
+			}
+			else if(i>20000&&i<=30000)
+			{
+				ADDR2 = 0;
+				ADDR1 = 1;
+				ADDR0 = 1;
+				DB_0 = 1;
+				DB_1 = 0;
+				DB_2 = 0;
+				DB_3 = 0;
+				DB_4 = 1;
+				DB_5 = 0;
+				DB_6 = 0;
+				DB_7 = 1;
+			}
+			else if(i>30000&&i<=40000)
+			{
+				ADDR2 = 0;
+				ADDR1 = 1;
+				ADDR0 = 0;
+				DB_0 = 1;
+				DB_1 = 1;
+				DB_2 = 1;
+				DB_3 = 1;
+				DB_4 = 1;
+				DB_5 = 1;
+				DB_6 = 1;
+				DB_7 = 1;
+			}
+			else
+			{
+				ADDR2 = 0;
+				ADDR1 = 0;
+				ADDR0 = 1;
+				DB_0 = 1;
+				DB_1 = 1;
+				DB_2 = 1;
+				DB_3 = 1;
+				DB_4 = 1;
+				DB_5 = 1;
+				DB_6 = 1;
+				DB_7 = 1;
+			}
+		}
+	}
+}
