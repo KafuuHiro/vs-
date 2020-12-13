@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+void InputName(char StudName[][8])
+{
+	for(int i=0;i<8;i++)
+	{
+		gets_s(StudName[i]);
+	}
+}
+
+void Bubble(char StudName[][8])
+{
+	int i, j;char temp[8];
+	for (i = 0; i <= 6; i++)
+	{
+		for (j = 0; j <= 6 - i; j++)
+
+			if (strcmp(StudName[j],StudName[j + 1])>0)
+			{
+				strcpy_s(temp, StudName[j]);
+				strcpy_s(StudName[j], StudName[j + 1]);
+				strcpy_s(StudName[j + 1], StudName[j]);
+			}
+		for (j = 0; j < 8 ; j++)
+			printf("%s\n", StudName[j]);
+	}
+}
+
+void OutputName(char StudName[][8])
+{
+	int i;
+	for (i = 0; i < 8; i++)
+	{
+		printf("%s\n", StudName[i]);
+	}
+}
+
+int main()
+{
+	int i;
+	char StudName[8][8];
+	InputName(StudName);
+	OutputName(StudName);
+}
