@@ -1,0 +1,47 @@
+
+#include <iostream>
+#include<string.h>
+using namespace std;
+
+void InputName(char StudName[][8])
+{
+    for(int i=0;i<8;i++)
+    {
+        gets(StudName[i]);
+    }
+}
+
+void Bubble(char StudName[][8])
+{
+    int i, j;char *temp;temp=(char*) malloc(8);
+    for (i = 0; i <= 6; i++)
+    {
+        for (j = 0; j <= 6 - i; j++)
+
+            if (strcmp(StudName[j],StudName[j + 1])>0)
+            {
+                strcpy(temp, StudName[j]);
+                strcpy(StudName[j], StudName[j + 1]);
+                strcpy(StudName[j + 1], StudName[j]);
+                temp="\0\0\0\0\0\0\0\0";
+            }
+    }
+}
+
+void OutputName(char StudName[][8])
+{
+    int i;
+    for (i = 0; i < 8; i++)
+    {
+        printf("%s\n", StudName[i]);
+    }
+}
+
+int main()
+{
+    int i;
+    char StudName[8][8];
+    InputName(StudName);
+        Bubble(StudName);
+    OutputName(StudName);
+}
