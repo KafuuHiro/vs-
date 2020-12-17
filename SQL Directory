@@ -3,6 +3,7 @@
 #include<stdio.h>
 #include<iostream>
 #define N 1000
+using namespace std;
 
 int main()
 {
