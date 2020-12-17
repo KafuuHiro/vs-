@@ -1,0 +1,48 @@
+#include<string.h>
+#include<stdlib.h>
+#include<stdio.h>
+#include<iostream>
+#define N 1000
+
+int main()
+{
+    int i, n, count=0; char temp[14];char bin[2];
+    cout << "num of contact\n";
+    cin >> n;
+    gets(bin);
+    struct directory {
+        char name[14];
+        char tel[12];
+    }p[N];
+    cout << "======input======";
+    for (i = 0; i < n; i++)
+    {
+        cout << "\ninput name:";
+        gets(p[i].name);
+        cout << "input tel:";
+        gets(p[i].tel);
+    }
+    cout << "======SQL======\n";
+    scanf("%s", temp);
+//  scanf("SELECT tel FROM directory WHERE name = %s", temp);
+//    *(temp + strlen(temp)) = '\0';
+    for (i = 0; i < n; i++)
+    {
+        if (strcmp(temp,p[i].name)==0)
+        {
+            printf("%s", p[i].tel);
+            break;
+        }
+        else
+            count=count+1;
+    }
+    if (count == n)
+    {
+        cout << "name\ttel\n";
+        for (i = 0; i < n; i++)
+        {
+            cout << p[i].name<<"\t";
+            cout << p[i].tel<<"\n";
+        }
+    }
+}
