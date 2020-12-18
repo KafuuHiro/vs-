@@ -1,0 +1,23 @@
+#include <iostream>
+#include<math.h> 
+using namespace std;
+
+int main()
+{
+    int h, m; double a, angle;
+    double M, H;
+    scanf("%d %d", &h, &m);
+
+    H = (double)(((1.0 * h / 12.0) * 360.0) + (1.0 * m / 60.0) * (360.0 / 12.0));
+    M = (double) (1.0*m / 60.0) * 360.0;
+    a = abs(M - H);
+
+    if (a > 180)
+        angle = 360 - a;
+    else
+        angle = a;
+    if (m < 10)
+        printf("At %d:0%d the angle is %.1lf degrees.", h, m, angle);
+    else
+        printf("At %d:%d the angle is %.1lf degrees.", h, m, angle);
+}
