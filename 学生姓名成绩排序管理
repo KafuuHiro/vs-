@@ -1,0 +1,62 @@
+#include <iostream>
+#include<string.h>
+using namespace std;
+
+void InputName(char StudNo[][12],double score[8])
+{
+	for(int i=0;i<8;i++)
+	{
+		printf("\n请输入姓名: ");
+		gets(StudNo[i]);
+		printf("请输入成绩: ");
+		scanf("%lf",score+i);
+		getchar();
+	}
+}
+
+/*void OutputName(char StudNo[][12])
+{
+	int i;
+	for (i = 0; i < 8; i++)
+	{
+		printf("%s\n", StudName[i]);
+	}
+}*/
+
+void SelectSort(char StudNo[][12],double score[8])
+{
+	int i,j,k;float ntemp;char stemp[12];
+	for (j = 0; j < 8; ++j)
+	{
+		k = j;
+		for (i = j + 1; i < 8; ++i)
+		{
+			if (score[k] < score[i])
+			{
+				k = i;
+			}
+		}
+		ntemp=score[j];score[j]=score[k];score[k]=ntemp;
+		strcpy(stemp,StudNo[j]);strcpy(StudNo[j],StudNo[k]);strcpy(StudNo[k],stemp);
+	}
+}
+
+void Output(char StudNo[][12],double score[8])
+{
+	int i;
+	for(i=0;i<8;i++)
+	{
+		printf("姓名：%s",StudNo[i]);
+		printf("\t成绩：%lf\n",score[i]); 
+	}
+}
+
+int main()
+{
+	int i;
+	char StudNo[8][12];double score[8];
+	InputName(StudNo,score);
+	SelectSort(StudNo,score);
+	printf("======sort======\n");   
+	Output(StudNo,score);
+}
