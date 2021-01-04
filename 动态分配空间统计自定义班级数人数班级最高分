@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+void max(int* p, int m, int n)
+{
+    int i, j, record = *(p), row = 0, col = 0;
+    for (i = 0; i < m; i++)
+    {
+        for (j = 0; j < n; j++)
+        {
+            if (*(p + n * i + j) > record)
+            {
+                record = *(p + n * i + j);
+                row = i; col = j;
+            }
+        }
+    }
+    printf("最高分：%d\n是第 %d 个班第 %d 个学生", record, row + 1, col + 1);
+}
+
+int main()
+{
+    int i, j, m, n;
+    cout << "班级个数：";
+    cin >> m;
+    cout << "每个班的人数：";
+    cin >> n;
+    cout << endl;
+    int* p = (int*)malloc(4 * m * n);
+    for (i = 0; i < m; i++)
+    {
+        printf("第%d个班\n", i + 1);
+        for (j = 0; j < n; j++)
+        {
+            printf("成绩：");
+            scanf_s("%d", p + i * n + j);
+        }
+        cout << endl;
+    }
+    max(p, 3, n);
+}
