@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+#define LEN sizeof(struct line)
+
+struct line
+{
+	int nNum;
+	struct line* next;
+};
+
+struct line* creat()
+{
+	int i;
+	struct line* pnew, * last = NULL;
+	pnew = (struct line*)malloc(LEN);
+	last = pnew; pnew->next = NULL; pnew->nNum = 1;
+	for (i = 0; i < 8; i++)
+	{
+		pnew = (struct line*)malloc(LEN);
+		pnew->nNum = i + 2;
+		pnew->next = last;
+		last = pnew;
+	}
+	return last;
+}
+
+void display(struct line* last)
+{
+	struct line* p;
+	p = last;
+	while (p != NULL)
+	{
+		if ((p->nNum) % 2 == 0)
+		{
+			printf("%d", p->nNum);
+		}
+		p = p->next;
+	}
+}
+
+int main()
+{
+	struct line* last;
+	last = creat();
+	display(last);
+}
