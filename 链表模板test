@@ -14,6 +14,7 @@ struct list* create()
 {
     struct list* phead = NULL, * pnew, * ptail;
     pnew = (struct list*)malloc(sizeof(struct list));
+    pnew -> n = -1;
     phead = pnew; ptail = pnew;
     phead->next = NULL;
     for(int i=0;i<10;i++)
