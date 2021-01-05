@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<iostream>
+using namespace std;
+
+struct list
+{
+    int n;
+    struct list* next;
+};
+
+struct list* create()
+{
+    struct list* phead = NULL, * pnew, * ptail;
+    pnew = (struct list*)malloc(sizeof(struct list));
+    phead = pnew; ptail = pnew;
+    phead->next = NULL;
+    for(int i=0;i<10;i++)
+    {
+        pnew = (struct list*)malloc(sizeof(struct list));
+        pnew->n = i;
+        pnew->next = NULL;
+        ptail->next = pnew;
+        ptail = pnew;
+    }
+    return phead;
+}
+
+void display(struct list* phead)
+{
+    struct list* p;
+    p = phead;
+    while (p != NULL)
+    {
+        printf("%d", p->n);
+    }
+    p = p->next;
+}
+
+int main()
+{
+    struct list* phead;
+    phead = create();
+    display(phead);
+    return 0;
+}
