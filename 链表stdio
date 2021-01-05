@@ -1,0 +1,52 @@
+#include <iostream>
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <malloc.h>
+using namespace std;
+
+struct line
+{
+    int nNum;
+    struct line* next;
+};
+
+struct line* f()
+{
+    int i;
+    struct line* phead = 0, * pnew, * ptail;
+    for (i = 0; i++; i < 9)
+    {
+        pnew = (struct line*)malloc(sizeof(struct line));
+        if (i == 8)
+            free(pnew);
+        pnew->nNum = i + 1;
+        pnew->next = 0;
+ //       if (phead == 0)
+ //           ptail = pnew;
+        if (i == 0)
+            phead = pnew;
+        else
+            ptail->next = pnew;
+        ptail = pnew;
+    }
+    return phead;
+}
+
+void display(struct line* phead)
+{
+    struct line* p;
+    p = phead;
+    while (p != 0&&(p->nNum)%2==0)
+    {
+        printf("%d", p->nNum);
+    }
+    p = p->next;
+}
+
+int main()
+{
+    struct line* phead;
+    phead = f();
+    display(phead);
+}
